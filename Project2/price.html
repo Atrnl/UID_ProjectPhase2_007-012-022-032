@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pricing Plans</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: #111;
+        color: #fff;
+        text-align: center;
+    }
+
+    .plan-section {
+        padding: 3rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .subtext {
+        font-size: 1.1rem;
+        color: #ccc;
+        margin-bottom: 2rem;
+    }
+
+    .plan-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .card {
+        background: #161a17;
+        padding: 1.5rem;
+        border-radius: 12px;
+        max-width: 280px;
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 15px #0cef0c77;
+    }
+
+    .card h2 {
+        color: #0cef0c;
+        margin-bottom: 0.3rem;
+    }
+
+    .card h3 {
+        color: #ccc;
+        font-weight: normal;
+        margin-bottom: 1rem;
+    }
+
+    .card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 3rem;
+    }
+
+    .card li {
+        margin: 0.4rem 0;
+    }
+
+    button {
+        background: #0cef0c;
+        border: none;
+        color: white;
+        padding: 10px 18px;
+        border-radius: 6px;
+        font-weight: bold;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #575c58;
+        color: white;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.85);
+        justify-content: center;
+        align-items: center;
+        z-index: 99;
+    }
+
+    .modal-content {
+        background: #222;
+        padding: 2rem;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 400px;
+        box-shadow: 0 0 20px #0cef0c;
+        overflow-y: auto;
+        max-height: 80vh;
+        text-align: center;
+    }
+
+    .modal-content::-webkit-scrollbar {
+        display: none;
+    }
+
+    .modal-content {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .close-btn {
+        margin-top: 1.5rem;
+        background: #0cef0c;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close-btn:hover {
+        background: #575c58;
+        color: white;
+    }
+
+    .payment-options {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 1rem;
+    }
+
+    .pay-btn {
+        background-color: rgb(2, 114, 2);
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+    .pay-btn:hover {
+        background-color: #575c58;
+        color: white;
+    }
+
+    @media (max-width: 768px) {
+        .plan-cards {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+</style>
+</head>
+<body>
+
+<section class="plan-section">
+    <h1>Choose Your <span style="color: rgb(12, 238, 12);">Plan</span></h1>
+    <p class="subtext">Flexible options designed to fit your fitness journey.</p>
+
+    <div class="plan-cards">
+        <div class="card">
+            <h2>BASIC</h2>
+            <h3>₹999 / Month</h3>
+            <ul>
+                <li>Smart Workout Plan</li>
+                <li>At Home Workout</li>
+            </ul>
+            <button onclick="openPlanModal('BASIC')">Join Now</button>
+        </div>
+
+        <div class="card">
+            <h2>PRO</h2>
+            <h3>₹1,999 / Month</h3>
+            <ul>
+                <li>PRO GYMs</li>
+                <li>Smart Workout Plan</li>
+                <li>At Home Workout</li>
+            </ul>
+            <button onclick="openPlanModal('PRO')">Join Now</button>
+        </div>
+
+        <div class="card">
+            <h2>PREMIUM</h2>
+            <h3>₹2,999 / Month</h3>
+            <ul>
+                <li>ELITE GYMs and Classes</li>
+                <li>PRO GYMs</li>
+                <li>Smart Workout Plan</li>
+                <li>At Home Workout</li>
+                <li>Personal Training</li>
+            </ul>
+            <button onclick="openPlanModal('PREMIUM')">Join Now</button>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div id="planModal" class="modal">
+    <div class="modal-content" id="modalContent">
+        <!-- JS will fill this -->
+    </div>
+</div>
+
+<script>
+function openPlanModal(planName) {
+    const content = `
+        <h2>${planName} Plan</h2>
+        <p>Select a payment method to continue:</p>
+        <div class="payment-options">
+            <button class="pay-btn" onclick="handlePayment('Credit/Debit Card')">💳 Credit/Debit Card</button>
+            <button class="pay-btn" onclick="handlePayment('UPI')">📱 UPI</button>
+            <button class="pay-btn" onclick="handlePayment('Net Banking')">🏦 Net Banking</button>
+            <button class="pay-btn" onclick="handlePayment('Wallets')">💼 Wallets</button>
+        </div>
+        <button class="close-btn" onclick="closeModal()">OK</button>
+    `;
+    document.getElementById("modalContent").innerHTML = content;
+    document.getElementById("planModal").style.display = "flex";
+}
+function closeModal() {
+    document.getElementById("planModal").style.display = "none";
+}
+function handlePayment(method) {
+    document.getElementById("modalContent").innerHTML = `
+        <h2>✅ Payment Successful</h2>
+        <p>Thank you for choosing the ${method} method!</p>
+        <button class="close-btn" onclick="closeModal()">Close</button>
+    `;
+}
+window.onclick = function(event) {
+    const modal = document.getElementById("planModal");
+    if (event.target === modal) {
+        closeModal();
+    }
+}
+</script>
+</body>
+</html>

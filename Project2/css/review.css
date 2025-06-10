@@ -1,0 +1,147 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+}
+.review {
+    background: black;
+    padding: 80px 20px;
+}
+
+.review .heading {
+    font-size: 2.5rem;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.review-box {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.review_write {
+    background-color: #111;
+    padding: 30px;
+    border: 3px solid #9FD948;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.review_write textarea {
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-family: inherit;
+}
+
+.card {
+    padding: 1rem 0;
+}
+.star {
+    font-size: 50px;
+    cursor: pointer;
+    color: rgba(200, 200, 200, 0.3);
+}
+.active {
+    color: rgb(210, 192, 91);
+}
+
+input[type=submit] {
+    background-color: #7BA63C;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.wrapper {
+    display: flex;
+    gap: 2rem;
+    flex: 1;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.review-item {
+    min-width: 350px;
+    max-width: 400px;
+    border: 3px solid #A2F229;
+    border-radius: 2rem;
+    padding: 30px;
+    text-align: center;
+    transition: 0.5s ease-in-out;
+}
+.review-item:hover {
+    border: 3px solid black;
+    transform: translateY(-5px) scale(1.03);
+}
+.review-item img {
+    width: 12rem;
+    border-radius: 50%;
+    border: 2px solid #A2F229;
+}
+.review-item h2 {
+    font-size: 2rem;
+    margin: 10px 0;
+}
+.review-item p {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    color: #eee;
+}
+#Star {
+    color: gold;
+    font-size: 1.8rem;
+}
+
+.footer {
+    background: rgb(34, 34, 34);
+    padding: 50px 0;
+    text-align: center;
+}
+.footer .social a {
+    font-size: 25px;
+    color: #A2F229;
+    border: 2px solid #A2F229;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.5s ease-in-out;
+}
+.footer .social a:hover {
+    transform: scale(1.2) translateY(-10px);
+    background: #A2F229;
+    color: #131313;
+    box-shadow: 0 0 25px #9FD948;
+}
+.footer .copyright {
+    margin-top: 20px;
+    color: rgb(255, 254, 254);
+    font-size: 16px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

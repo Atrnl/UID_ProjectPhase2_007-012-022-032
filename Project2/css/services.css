@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --bg-color: #000;
+  --snd-bg-color: #111;
+  --text-color: #fff;
+  --main-color: #A2F229;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+section {
+  min-height: 100vh;
+  padding: 10rem 8% 2rem;
+}
+
+/* Services Section */
+.services {
+  background: var(--snd-bg-color);
+}
+
+.heading {
+  text-align: center;
+  font-size: 6.5rem;
+}
+
+.services-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+  align-items: center;
+  gap: 2.3rem;
+  margin-top: 4.1rem;
+}
+
+.row {
+  background: var(--bg-color);
+  border-radius: 27px;
+  border: 1px solid transparent;
+  box-shadow: 0 0 5px var(--main-color);
+  padding: 20px;
+  transition: all 0.5s ease;
+}
+
+.row img {
+  height: 250px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 27px;
+  margin-bottom: 1.4rem;
+}
+
+.row h4 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.row:hover {
+  border: 1px solid var(--main-color);
+  transform: translateY(-5px) scale(1.04);
+  cursor: pointer;
+}

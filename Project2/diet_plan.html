@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Plans</title>
+    <link rel="stylesheet" href="css/diet.css">
+</head>
+<body>
+    <img id="diet-image" src="images/DietPlan .jpg">
+    <section class="diet-section">
+        <h1>Personalized<span style="color: rgb(12, 238, 12);"> Diet Plans</span> for Every Goal</h1>
+        <p>Your personalized roadmap to eating better, feeling stronger, and living healthier.</p>
+        
+        <!-- Diet Plan Cards -->
+        <div class="diet-cards">
+            <div class="card">
+                <img class="plan-images" alt="Weight Loss Diet" src="images/WeightLoss.png">
+                <h3>Weight Loss Diet</h3>
+                <p>Low-calorie, balanced meals to shed extra pounds.</p>
+                <button onclick="showDetails('Weight Loss')">View Plan</button>
+            </div>
+            <div class="card">
+                <img class="plan-images" src="images/MuscleGain.png">
+                <h3>Muscle Gain Diet</h3>
+                <p>High-protein meals to build muscle mass.</p>
+                <button onclick="showDetails('Muscle Gain')">View Plan</button>
+            </div>
+            <div class="card">
+                <img class="plan-images" src="images/BalancedDiet.png">
+                <h3>Balanced Diet</h3>
+                <p>Optimal balance of proteins, carbs, and fats.</p>
+                <button onclick="showDetails('Balanced')">View Plan</button>
+            </div>
+        </div>
+
+        <!-- Diet Plan Modal -->
+        <div id="dietModal" class="modal">
+            <div class="modal-content" id="modalContent">
+                <button onclick="closeModal()" class="close-btn">OK</button>
+            </div>
+        </div>
+
+        <!-- Calorie Calculator -->
+        <div class="calculator">
+            <h2><span style="color: rgb(12, 238, 12);"> Calorie</span> Calculator</h2>
+            <input type="number" id="weight" placeholder="Weight (kg)">
+            <input type="number" id="height" placeholder="Height (cm)">
+            <input type="number" id="age" placeholder="Age">
+            <select id="activity">
+                <option selected >Select</option>
+                <option value="1.2">Sedentary</option>
+                <option value="1.375">Light Activity</option>
+                <option value="1.55">Moderate Activity</option>
+                <option value="1.725">Active</option>
+                <option value="1.9">Very Active</option>
+            </select>
+            <br>
+            <button onclick="calculateCalories()">Calculate</button>
+            <p id="calorie-result"></p>
+        </div>
+    </section>
+
+    <script src="javascript/dietScript.js"></script>
+</body>
+</html>

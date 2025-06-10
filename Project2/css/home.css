@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --bg-color: #0D0D0D;
+  --snd-bg-color: #595959;
+  --text-color: white;
+  --main-color: #A2F229;
+  --secondary-color: #9FD948;
+  --accent-color: #7BA63C;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  background-image: url('../images/home_image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--text-color);
+}
+
+section {
+  min-height: 100vh;
+  padding: 10rem 8% 2rem;
+}
+
+/* Header */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 9%;
+  background: rgba(13, 13, 13, 0.8);
+  backdrop-filter: blur(10px);
+  transition: all 0.5s ease;
+}
+
+.logo {
+  font-size: 3rem;
+  color: var(--text-color);
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.logo:hover {
+  transform: scale(1.1);
+}
+span {
+  color: var(--main-color);
+}
+
+.navbar {
+  display: flex;
+}
+.navbar a {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--text-color);
+  margin-left: 4rem;
+  transition: all 0.5s ease;
+  border-bottom: 3px solid transparent;
+}
+.navbar a:hover,
+.navbar a.active {
+  color: var(--main-color);
+  border-bottom: 3px solid var(--main-color);
+}
+
+/* Navigation Icons */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.nav-icons a {
+  color: var(--text-color);
+  font-size: 2.4rem;
+  transition: 0.3s ease-in-out;
+}
+.nav-icons a:hover {
+  color: var(--main-color);
+}
+
+/* Cart Count Badge */
+.cart-icon {
+  position: relative;
+  color: #ffffff;
+}
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: var(--main-color);
+  color: var(--bg-color);
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50%;
+}
+
+/* Home Section */
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+.home-content {
+  text-align: left;
+  margin-left: -50rem;
+}
+.home-content h3 {
+  font-size: 5rem;
+  font-weight: 700;
+  font-family: "Futura Bold", sans-serif;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+.home-content h1 {
+  font-size: 6rem;
+  font-weight: 900;
+  font-family: "Montserrat Black", sans-serif;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+.home-content span {
+  font-size: 4rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+.home-content p {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--text-color);
+  letter-spacing: 0.05em;
+}
+
+/* Button Styling */
+.btn {
+  display: inline-block;
+  padding: 1rem 2.8rem;
+  background: var(--main-color);
+  border-radius: 1rem;
+  font-size: 1.6rem;
+  color: var(--bg-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+    margin-top: 3rem;
+}
+.btn:hover {
+  color: var(--text-color);
+  box-shadow: 0 0 1.6rem var(--main-color);
+}
+
+/* Membership Section */
+.membership {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 8rem 8%;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.membership-content h2 {
+  font-size: 4rem;
+  color: var(--main-color);
+  margin-bottom: 3rem;
+}
+
+.plan-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 5rem;
+}
+
+.plan-card {
+  background: var(--snd-bg-color);
+  padding: 2rem;
+  border-radius: 1.2rem;
+  width: 30rem;
+  transition: 0.4s;
+  box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.6);
+}
+
+.plan-card h3 {
+  font-size: 2.4rem;
+  color: var(--main-color);
+  margin-bottom: 1rem;
+}
+
+.plan-card p {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.plan-card h4 {
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
+
+.membership-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.membership-form input,
+.membership-form select {
+  padding: 1rem;
+  font-size: 1.6rem;
+  border-radius: 0.8rem;
+  background: #1a1a1a;
+  color: var(--text-color);
+  border: 1px solid var(--main-color);
+}
+
+.membership-form button {
+  cursor: pointer;
+}

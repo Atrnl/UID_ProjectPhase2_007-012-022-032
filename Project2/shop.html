@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping</title>
+  <style>
+    p,h2{
+        color: white;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0d0d0d;
+      padding: 20px;
+      text-align: center;
+    }
+    h2 {
+      margin-top: 40px;
+    }
+    .section {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 20px;
+    }
+    .product {
+    width: 180px;
+    border: 3px solid #A2F229;
+    border-radius: 2rem;
+    padding: 20px;
+    text-align: center;
+    transition: 0.5s ease-in-out;
+    min-height: 370px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    }
+    
+    .product:hover {
+    border: 3px solid black;
+    transform: translateY(-5px) scale(1.03);
+    }
+    .product img {
+      width: 100%;
+      height: 150px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .quantity {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+}
+
+    .quantity button {
+    background-color: #A2F229;
+    color: #0D0D0D;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    }
+
+    .quantity button:hover {
+    background-color: #9FD948;
+    transform: scale(1.1);
+    }
+
+    .quantity span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #595959;
+    background-color: #D0D0D0;
+    padding: 6px 12px;
+    border-radius: 6px;
+    min-width: 30px;
+    text-align: center;
+    }
+    button {
+      padding: 4px 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .cart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+
+  .cart button {
+    position: relative;
+    background-color: #A2F229;
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .cart button:hover {
+    transform: scale(1.1);
+  }
+
+.cart img {
+  width: 30px;
+  height: 30px;
+}
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 3px 7px;
+}
+.price {
+  margin: 0 0 10px;
+  font-weight: bold;
+  color: white;
+}
+.product-name {
+  margin: 10px 0 6px;
+  font-size: 14px;
+  color: white;
+}
+
+  </style>
+</head>
+<body>
+  <h1 style="color: #9FD948;">Shopping</h1>
+
+  <div class="cart">
+    <button onclick="viewCart()">
+    <img src="images/shopping.png">
+    <span class="cart-count">0</span>
+  </button>
+  </div>
+
+  <h2>Protein Powder</h2>
+  <div class="section">
+    <div class="product">
+        <img src="images/Protein1.png">
+      <p class="product-name">Nutricost Whey Protein Powder, Vanilla, 5 pounds</p>
+      <p class="price">Price: ₹2,620 per unit</p>
+      <div class="quantity">
+        <button onclick="changeQty(this, -1)">-</button>
+        <span>0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+    <div class="product">
+        <img src="images/Protein2.png">
+      <p class="product-name">Vegan Protein Powder - Vanilla Organic Protein Powder, 22g Plant Based Protein & BCAAs</p>
+            <p class="price">Price: ₹1,259 per unit</p>
+      <div class="quantity">
+        <button onclick="changeQty(this, -1)">-</button>
+        <span>0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+    <div class="product">
+        <img src="images/Protein3.png">
+      <p class="product-name">Body Fortress Super Advanced Whey Protein Powder, Chocolate</p>
+            <p class="price">Price: ₹4,659 per unit</p>
+      <div class="quantity">
+        <button onclick="changeQty(this, -1)">-</button>
+        <span>0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+        <div class="product">
+        <img src="images/Protein4.png">
+      <p class="product-name">Wellbeing Nutrition Whey Protein Isolate & Concentrate 1Kg Swiss Chocolate</p>
+           <p class="price">Price: ₹2,698 per unit</p>
+      <div class="quantity">
+        <button onclick="changeQty(this, -1)">-</button>
+        <span>0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+  </div>
+
+  <h2>Workout Snacks</h2>
+  <div class="section">
+    <div class="product">
+        <img src="images/snacks1.png">
+      <p class="product-name">Creatine Monohydrate Gummies 5000mg for Men & Women</p>
+            <p class="price">Price: ₹2,508 per unit</p>
+      <div class="quantity">
+        <button onclick="changeQty(this, -1)">-</button>
+        <span>0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+    <div class="product">
+      <img src="images/snacks2.png">
+      <p class="product-name">Pure Protein Variety Pack - 12 Count Box </p>
+            <p class="price">Price: ₹4,789 per unit</p>
+      <div class="quantity">
+        <button onclick="changeQty(this, -1)">-</button>
+        <span>0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+    <div class="product">
+       <img src="images/snacks3.png">
+      <p class="product-name">Skratch Labs Energy Chews | Gummies for Running, Cycling, and Sports Performance </p>
+           <p class="price">Price: ₹3,239 per unit</p>
+      <div class="quantity">
+        <button onclick="changeQty(this, -1)">-</button>
+        <span>0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+  </div>
+
+  <h2>Multivitamin</h2>
+  <div class="section">
+    <div class="product">
+        <img src="images/vitamin1.png">
+      <p class="product-name">Ultimate Multivitamin Multimineral and Superfood with 42 Fruit and Vegetable Blend</p>
+               <p class="price">Price: ₹1,110 per unit</p>
+      <div class="quantity">
+        <button onclick="changeQty(this, -1)">-</button>
+        <span>0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+    <div class="product">
+      <img src="images/vitamin2.png">
+      <p class="product-name">NATURELO Mens Multivitamins - One Daily Multivitamin </p>
+                  <p class="price">Price: ₹1,988 per unit</p>
+      <div class="quantity">
+        <button onclick="changeQty(this, -1)">-</button>
+        <span>0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+    <div class="product">
+       <img src="images/vitamin3.png">
+      <p class="product-name">Centrum Adult Multivitamin Supplement with Antioxidants, Zinc, Vitamin D3 </p>
+              <p class="price">Price: ₹886 per unit</p>
+      <div class="quantity">
+        <button onclick="changeQty(this, -1)">-</button>
+        <span>0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+    <div class="product">
+       <img src="images/vitamin4.png">
+      <p class="product-name">Kirkland Signature Adult 50+ Multi Vitamins & Minerals, 400 Tablets</p>
+           <p class="price">Price: ₹1,457 per unit</p>
+      <div class="quantity">
+        <button onclick="changeQty(this, -1)">-</button>
+        <span>0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+  </div>
+
+  <h2>Gym Accessories</h2>
+  <div class="section">
+    <div class="product">
+        <img src="images/gym1.png">
+      <p class="product-name">WALITO 8Pcs Barbell Pad Set</p>
+               <p class="price">Price: ₹1,457 per unit</p>
+      <div class="quantity">
+        <button onclick="changeQty(this, -1)">-</button>
+        <span>0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+    <div class="product">
+      <img src="images/gym2.png">
+      <p class="product-name">S&T INC. Microfiber Gym Towels, Yoga Towel for Home and Gym Bag</p>
+                 <p class="price">Price: ₹229 per unit</p>
+      <div class="quantity">
+        <button onclick="changeQty(this, -1)">-</button>
+        <span>0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+    <div class="product">
+       <img src="images/gym3.png">
+      <p class="product-name">Fit Active Sports New Ventilated Weight Lifting Workout Gloves with Built-in Wrist Wraps for Men and Women  </p>
+                <p class="price">Price: ₹499 per unit</p>
+      <div class="quantity">
+        <button onclick="changeQty(this, -1)">-</button>
+        <span>0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+    <div class="product">
+      <img src="images/gym4.png">
+      <p class="product-name">BlenderBottle Shaker Bottle with Pill Organizer and Storage for Protein Powder</p>
+                  <p class="price">Price: ₹600 per unit</p>
+      <div class="quantity">
+        <button onclick="changeQty(this, -1)">-</button>
+        <span>0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+        <div class="product">
+      <img src="images/gym5.png">
+      <p class="product-name">adidas Alliance Sackpack, Drawstring Backpack, Lightweight Small Gym Bag</p>
+                 <p class="price">Price: ₹2,000 per unit</p>
+      <div class="quantity">
+        <button onclick="changeQty(this, -1)">-</button>
+        <span>0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+        <div class="product">
+      <img src="images/gym6.png">
+      <p class="product-name">Speed Jump Rope by Dayan Kolev, 5mm PVC Skipping Rope, Great for Beginners and Advanced Athlets</p>
+                  <p class="price">Price: ₹870 per unit</p>
+      <div class="quantity">
+        <button onclick="changeQty(this, -1)">-</button>
+        <span>0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+        <div class="product">
+      <img src="images/gym7.png">
+      <p class="product-name">Sports Headbands for Men (5 Pack),Moisture Wicking Workout Headband</p>
+                 <p class="price">Price: ₹450 per unit</p>
+      <div class="quantity">
+        <button onclick="changeQty(this, -1)">-</button>
+        <span>0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+  function changeQty(button, delta) {
+    const span = button.parentElement.querySelector('span');
+    let value = parseInt(span.innerText);
+    value = Math.max(0, value + delta);
+    span.innerText = value;
+    updateCartCount();
+  }
+
+  function updateCartCount() {
+    const allSpans = document.querySelectorAll('.quantity span');
+    let total = 0;
+    allSpans.forEach(span => {
+      total += parseInt(span.innerText);
+    });
+    document.querySelector('.cart-count').innerText = total;
+  }
+
+  function viewCart() {
+    alert("Items successfully added to cart.");
+  }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="css/home.css" rel="stylesheet" />
+  <title>FitLife</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <a href="index.html" class="logo">FitLife <span>Fitness</span></a>
+    <ul class="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="diet_plan.html">Diet Plan</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="price.html">Membership</a></li>
+      <li><a href="review.html">Review</a></li>
+      <li><a href="shop.html">Shop</a></li>
+    </ul>
+    <div class="nav-icons">
+      <a href="shop.html" class="cart-icon"><i class='bx bx-cart'></i><span class="cart-count">0</span></a>
+    </div>
+  </header>
+
+  <!-- Home Section -->
+  <section class="home" id="home">
+    <div class="home-content">
+      <h3>Build Your</h3>
+      <h1>Dream Physique</h1>
+      <h3><span>Bodybuilding</span></h3>
+      <p>Big muscles aren't just built — they're earned. Let's make every rep count.</p>
+      <a href="#plans" class="btn">Join Us</a>
+    </div>
+  </section>
+
+  <!-- Membership Section -->
+  <section class="membership" id="plans">
+    <div class="membership-content">
+      <h2>Membership Plans</h2>
+      <div class="plan-cards">
+        <div class="plan-card">
+          <h3>Basic</h3>
+          <p>Access to gym equipment and locker room</p>
+          <h4>₹999/month</h4>
+        </div>
+        <div class="plan-card">
+          <h3>Pro</h3>
+          <p>Includes personal trainer & diet consultation</p>
+          <h4>₹1,999/month</h4>
+        </div>
+        <div class="plan-card">
+          <h3>Elite</h3>
+          <p>All Pro benefits + steam, massage, and apparel discount</p>
+          <h4>₹2,999/month</h4>
+        </div>
+      </div>
+
+      <form class="membership-form">
+        <h3>Sign Up for a Plan</h3>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <input type="tel" placeholder="Phone Number" required />
+        <select required>
+          <option value="">Select Plan</option>
+          <option value="Basic">Basic</option>
+          <option value="Pro">Pro</option>
+          <option value="Elite">Elite</option>
+        </select>
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </div>
+  </section>
+
+</body>
+</html>

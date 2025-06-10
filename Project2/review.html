@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Reviews</title>
+    <link rel="stylesheet" href="css/review.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <section class="review" id="review">
+        <h1 class="heading">Client Reviews</h1>
+        <div class="review-box">
+            <div class="review_write">
+                <label for="review" style="color: white;">Enter review:</label><br>
+                <div class="card">
+                    <br />
+                    <span onclick="gfg(1)" class="star">★</span>
+                    <span onclick="gfg(2)" class="star">★</span>
+                    <span onclick="gfg(3)" class="star">★</span>
+                    <span onclick="gfg(4)" class="star">★</span>
+                    <span onclick="gfg(5)" class="star">★</span>
+                </div>
+                <form onsubmit="submitReview(event)">
+                    <textarea id='reviewText' name="review" rows="5" cols="65" placeholder="Enter your review here"></textarea>
+                    <br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+
+            <div class="wrapper">
+                <div class="review-item">
+                    <img src="images/Daniel.png" alt="">
+                    <h2>Daniel Johnson</h2>
+                    <div class="rating">
+                        <i class="bx bxs-star" id="Star"></i>
+                        <i class="bx bxs-star" id="Star"></i>
+                        <i class="bx bxs-star" id="Star"></i>
+                        <i class="bx bxs-star" id="Star"></i>
+                        <i class="bx bxs-star" id="Star"></i>
+                    </div>
+                    <p>I’ve tried a bunch of fitness apps, but this one actually keeps me coming back. The workout plans are easy to follow but still push you hard. I like how they include warm-ups and cool-downs too — most skip that.</p>
+                </div>
+
+                <div class="review-item">
+                    <img src="images/Samantha.png" alt="">
+                    <h2>Samantha Cally</h2>
+                    <div class="rating">
+                        <i class="bx bxs-star" id="Star"></i>
+                        <i class="bx bxs-star" id="Star"></i>
+                        <i class="bx bxs-star" id="Star"></i>
+                        <i class="bx bxs-star" id="Star"></i>
+                    </div>
+                    <p>This platform is exactly what I needed to stay consistent. The workouts range from beginner to advanced. I feel stronger and more energized, both physically and mentally.</p>
+                </div>
+
+                <div class="review-item">
+                    <img src="images/Mathew.png" alt="">
+                    <h2>Mathew June</h2>
+                    <div class="rating">
+                        <i class="bx bxs-star" id="Star"></i>
+                        <i class="bx bxs-star" id="Star"></i>
+                        <i class="bx bxs-star" id="Star"></i>
+                        <i class="bx bxs-star" id="Star"></i>
+                        <i class="bx bxs-star" id="Star"></i>
+                    </div>
+                    <p>Honestly, I was skeptical at first, but this site delivers. The mix of strength and cardio routines is well-balanced. I’ve recommended it to a few friends already.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="social">
+            <a href="#"><i class="bx bxl-facebook"></i></a>
+            <a href="#"><i class="bx bxl-instagram"></i></a>
+            <a href="#"><i class="bx bxl-linkedin"></i></a>
+        </div>
+        <p class="copyright">
+            &copy;FitLife 2024 - All Rights Reserved
+        </p>
+    </footer>
+
+    <script src="javascript/review.js"></script>
+</body>
+</html>
